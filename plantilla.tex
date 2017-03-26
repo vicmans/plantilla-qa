@@ -1,0 +1,61 @@
+% Plantilla QA
+
+% Creado por Victor Sanchez
+% vsanchezl94@gmail.com
+% Marzo 2017
+
+%Formato del título de las secciones
+\usepackage{titlesec}
+\titleformat*{\section}{\raggedright\bfseries\normalsize}
+\titlespacing*{\section}{12pt}{0em}{0em}
+\titleformat*{\subsection}{\bfseries\normalsize}
+
+%% Para letra roman
+\renewcommand*\rmdefault{ptm}
+
+\makeatletter
+
+	\newcommand{\prof}[1]{\def\@prof{#1}}
+	\newcommand{\prep}[1]{\def\@prep{#1}}
+	
+	\newcommand{\seccion}[1]{\def\@seccion{#1}}
+	%ademas
+	\newcommand{\muestra}[1]{\def\@muestra{#1}}
+	
+    \def\@maketitle{%
+  %\newpage
+  %\null
+  \vskip -1em%
+  \begin{center}%
+  \vskip -1em
+  \let \footnote \thanks
+    {\normalsize\bf \@title \par\par}%
+    \vskip 1em % linea en blanco
+    {\normalsize\it\bfseries
+	  \@author \par%
+    \vskip 1em % linea en blanco
+    Profesor: \@prof , Preparador: \@prep \par}%
+    \vskip 1em
+    {Laboratorio de Química Analítica, sección \@seccion , muestra Nº \@muestra \par%
+    
+    Escuela de Química, Facultad de Ingeniería, Universidad de Carabobo \par
+    \vskip 1em
+    Valencia, \@date}
+
+  \end{center}%
+  \par}
+
+\makeatother
+
+% Configuracion del resumen (abstract)
+\renewcommand{\abstractname}{RESUMEN}
+\renewcommand{\abstracttextfont}{\normalfont\normalsize}
+\setlength{\absleftindent}{0pt}
+\setlength{\absrightindent}{0pt}
+\setlength{\abstitleskip}{-12pt}
+%\setlength{\absparsep}{0pt}
+
+%Instrucción para evitar la indentación
+\setlength\parindent{0pt}
+%espacio entre parrafo
+\setlength{\parskip}{12pt}
