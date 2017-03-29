@@ -24,6 +24,8 @@
 
 %Opciones y configuracion del documento
 \include{plantilla}
+%Agregar los comandos
+\input{comandos}
 
 \title{TÍTULO ADECUADO INDICANDO LO QUE SE HIZO, MUESTRA Y TÉCNICA, EN LETRA TIMES NEW ROMAN, TAMAÑO 12, ALINEADO CENTRADO, MAYÚSCULA Y NEGRITA}
 \author{Tu nombre aqui}
@@ -133,6 +135,7 @@ Volumen EDTA                & Absorbancia           \\
 6,50                        & 0,116                 \\
 7,00                        & 0,116 \\\hline               
 \end{tabular}
+\vspace{1mm} %para añadir espacio
 
 \raggedright
 Volumen EDTA: volumen agregado de EDTA\\
@@ -148,7 +151,13 @@ Para las figuras: aplican las mismas especificaciones que para el caso de las ta
 \label{grafica}
 \end{figure}
 
-Para las ecuaciones y/o reacciones: Las ecuaciones deberán ser generadas por editores de ecuaciones utilizando fuente Times New Roman, tamaño 10 y centradas. También deberán ser enumeradas en secuencia y referidas en el texto, como se indica a continuación (ver reacción 1). Para su incorporación dejar una línea en blanco antes y después de la ecuación o reacción. 
+Las figuras también pueden añadirse con \verb*|\foto{figura.png}{pie de imagen}{label}}| para no repetir el label le colocamos diferente a cada figura.
+
+\foto{figura.png}{Absorbancia de la muestra problema de Cu EDTA en función del volumen}{grafica2}
+
+Hacemos referencia a la \figref{grafica2} usando el comando \verb|\figref{grafica2}|. De la misma manera con la \tabref{tab:tabla1}
+
+Para las ecuaciones y/o reacciones: Las ecuaciones deberán ser generadas por editores de ecuaciones utilizando fuente Times New Roman, tamaño 10 y centradas. También deberán ser enumeradas en secuencia y referidas en el texto, como se indica a continuación (ver reacción 1). Para su incorporación dejar una línea en blanco antes y después de la ecuación o reacción. Utilizando el paquete \texttt{mchem} puede escribir con mejor estilo las reacciones químicas, revisar la documentación en \url{ftp://www.ctan.org/tex-archive/macros/latex/contrib/mhchem/mhchem.pdf}
 \begin{equation}
 \ce{H3PO_4 + OH- <=> H_2PO_4^- + H_2O}
 \end{equation}
@@ -164,6 +173,7 @@ Las conclusiones deben ser precisas y concretas. No podrá concluirse sobre hech
 
 \renewcommand{\refname}{REFERENCIAS}
 \begin{thebibliography}{5}
+
 
 % Las referencias citadas en el informe se colocarán en corchetes con el número correspondiente a dicha referencia citada en el texto. A continuación se presentan tres ejemplos aleatorios, uno para libros y dos para información del internet.
 
