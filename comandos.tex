@@ -1,0 +1,27 @@
+% Serius Development Group
+% Victor Sanchez (vsanchez4@uc.edu.ve)
+% Definiendo comando para las fotos
+
+\newcommand{\foto}[4][1] {
+\begin{figure}[H]
+\centering
+\includegraphics[width=#1\columnwidth]{#2}
+\caption{#3}
+\label{#4}
+\end{figure}
+}
+
+%% uso del comando \foto
+%  \foto{direccion de la imagen}{caption}{label}
+%  asi ocupa todo el ancho de la columna
+%  \foto[0.5]{direccion de la imagen}{caption}{label}
+%  la mitad del ancho de la pagina, este parametro se
+%  puede ajustar, por defecto si no se coloca vale 1
+
+%% Referencias para tablas, escribe de una vez: Tabla 1
+
+\newcommand{\tabref}[1]{Tabla \ref{#1}}
+
+%% Referencias para figuras
+
+\newcommand{\figref}[1]{Figura \ref{#1}}
